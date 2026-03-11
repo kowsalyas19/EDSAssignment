@@ -187,3 +187,11 @@ async function loadPage() {
 }
 
 loadPage();
+// $(".accappend > div >div:nth-child(2) ").append($(".accordion"));
+
+const target = document.querySelector(".accappend > div > div:nth-child(2)");
+const accordion = document.querySelector(".accordion");
+if (target && accordion) {
+  target.appendChild(accordion);
+}
+
