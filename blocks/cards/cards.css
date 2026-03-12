@@ -7,6 +7,10 @@
   gap: 24px;
 }
 
+.blogpost>ul {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
 .cards>ul>li {
   border: 1px solid #dadada;
   background-color: var(--background-color);
@@ -24,4 +28,29 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+}
+
+.blogpost>ul>li {
+  position: relative;
+  box-shadow: rgb(245, 242, 242) 0px 2px 6px 0px;
+  border: 0;
+}
+
+.blogpost {
+  .cards-card-body>ul:first-child {
+    padding-left: 0;
+    list-style-type: none;
+    position: absolute;
+    top: 0;
+    background-color: red;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .cards-card-body>ul:nth-child(2) {
+    padding-left: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 35px;
+  }
 }

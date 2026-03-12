@@ -1,25 +1,36 @@
+.tabs {
+    display: flex;
+}
+
 .tabs .tabs-list {
     display: flex;
+    flex-direction: column;
     gap: 0.5ch;
     max-width: 100%;
+    width: 100%;
     font-size: var(--body-font-size-xs);
-    overflow-x: auto;
-  }
-  
-  @media (width >= 600px) {
-    .tabs .tabs-list {
-      font-size: var(--body-font-size-s);
+    /* overflow-x: auto; */
+}
+@media (max-width: 768px) {
+    .tabs {
+        display: block;
     }
-  }
-  
-  @media (width >= 900px) {
+}
+
+@media (width >=600px) {
     .tabs .tabs-list {
-      font-size: var(--body-font-size-m);
+        font-size: var(--body-font-size-s);
     }
-  }
-  
-  .tabs .tabs-list button {
-    flex: 0 0 max-content;
+}
+
+@media (width >=900px) {
+    .tabs .tabs-list {
+        font-size: var(--body-font-size-m);
+    }
+}
+
+.tabs .tabs-list button {
+    /* flex: 0 0 max-content;
     margin: 0;
     border: 1px solid var(--dark-color);
     border-radius: 0;
@@ -32,26 +43,31 @@
     text-overflow: unset;
     overflow: unset;
     white-space: unset;
-    transition: background-color 0.2s;
-  }
-  
-  .tabs .tabs-list button p {
+    transition: background-color 0.2s; */
+    padding: 30px;
+    border: 0;
+    background-color: #f1f2f3;
+    color: #022559;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.tabs .tabs-list button p {
     margin: 0;
-  }
-  
-  .tabs .tabs-list button[aria-selected='true'] {
-    border-bottom: 1px solid var(--background-color);
-    background-color: var(--background-color);
+}
+
+.tabs .tabs-list button[aria-selected='true'] {
+    background-color: var(--primary-color);
     cursor: initial;
-  }
-  
-  .tabs .tabs-panel {
+    color: #fff;
+}
+
+.tabs .tabs-panel {
     margin-top: -1px;
     padding: 24px;
-    border: 1px solid var(--dark-color);
     overflow: auto;
-  }
-  
-  .tabs .tabs-panel[aria-hidden='true'] {
+}
+
+.tabs .tabs-panel[aria-hidden='true'] {
     display: none;
-  }
+}

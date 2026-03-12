@@ -3,7 +3,19 @@ header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
   z-index: 2;
-  position: fixed;
+}
+
+.header-wrapper.scrolled .nav-wrapper {
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+.header-wrapper .default-content-wrapper p:nth-child(2),.header-wrapper.scrolled .nav-brand .default-content-wrapper p:nth-child(1){
+  display: none;
+}
+
+.header-wrapper.scrolled .default-content-wrapper p:nth-child(2),.header-wrapper .nav-brand .default-content-wrapper p:nth-child(1){
+  display: block;
 }
 
 header nav {
@@ -30,7 +42,7 @@ header nav[aria-expanded='true'] {
 
 @media (width >=900px) {
   header .nav-wrapper {
-    position: relative;
+    position: fixed;
   }
 
   header nav {
@@ -55,11 +67,13 @@ header nav p {
 header nav a:any-link {
   color: currentcolor;
 }
-header nav a:hover,header nav li p:hover
-{
+
+header nav a:hover,
+header nav li p:hover {
   color: var(--primary-color);
   text-decoration: none;
 }
+
 /* hamburger */
 header nav .nav-hamburger {
   grid-area: hamburger;
@@ -179,14 +193,14 @@ header nav .nav-sections ul>li {
   font-weight: 500;
 }
 
-header nav .nav-sections ul > li:last-child {
+header nav .nav-sections ul>li:last-child {
   background-color: var(--primary-color);
   border-radius: 5px;
   padding: 14px 25px;
   font-size: 18px;
   color: #fff;
-  &:hover
-  {
+
+  &:hover {
     background-color: var(--secondary-color);
     transition: 0.5s;
   }
@@ -289,15 +303,39 @@ header nav .nav-tools {
 }
 
 /* top navbar  */
-.top-nav-container {
+/* .columns-container:has(.top-nav) {
   background-color: var(--primary-color);
   font-size: 15px;
+  margin-bottom: 0px;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+} */
 
-  .top-nav-wrapper {
-    color: #fff;
-    padding: 10px 0;
-  }
+/* .columns-container:has(.top-navs) {
+  position: unset;
 }
+
+.header-wrapper .header {
+  position: fixed;
+  width: 100%;
+} */
+
+/* .header-wrapper.scrolled {
+  margin-top: 0 !important;
+
+  .header {
+    z-index: 9;
+
+    .nav-wrapper {
+      height: 100px;
+      background-color: #fff;
+    }
+  }
+} */
 
 .top-nav {
   div {

@@ -169,3 +169,15 @@ export default async function decorate(block) {
   navWrapper.append(nav);
   block.append(navWrapper);
 }
+
+const header1 = document.querySelector("header");
+const header2 = document.querySelector(".top-nav");
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    header1.classList.add("scrolled");
+    header2.classList.add('top-navs');
+  } else {
+    header1.classList.remove("scrolled");
+    header2.classList.remove('top-navs');
+  }
+});
